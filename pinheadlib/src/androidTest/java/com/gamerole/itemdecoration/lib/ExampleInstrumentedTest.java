@@ -1,4 +1,4 @@
-package com.gamerole.itemdecoration;
+package com.gamerole.itemdecoration.lib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.gamerole.itemdecoration.test", appContext.getPackageName());
+        assertEquals("com.gamerole.itemdecoration.lib.test", appContext.getPackageName());
     }
 }

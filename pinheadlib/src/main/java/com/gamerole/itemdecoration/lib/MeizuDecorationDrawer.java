@@ -1,4 +1,4 @@
-package com.gamerole.itemdecoration;
+package com.gamerole.itemdecoration.lib;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

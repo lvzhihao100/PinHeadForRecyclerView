@@ -1,4 +1,4 @@
-package com.gamerole.itemdecoration;
+package com.gamerole.itemdecoration.lib;
 
 /**
  * Created by lv on 17-8-11.
@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.ColorInt;
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -24,7 +23,7 @@ import java.util.Map;
  * E-Mail：1030753080@qq.com
  */
 
-public class PinHeadItemDecoration extends RecyclerView.ItemDecoration {
+public class PInHeadItemDecoration extends RecyclerView.ItemDecoration {
     //存放拥有头部的位置及展示文字
     private Map<Integer, String> keys = new HashMap<>();
     //头部所占高度
@@ -45,7 +44,7 @@ public class PinHeadItemDecoration extends RecyclerView.ItemDecoration {
     private float mTextCenterYToBottom;
     private float centerBaseLineHeight;
 
-    public PinHeadItemDecoration() {
+    public PInHeadItemDecoration() {
         init();
     }
 
@@ -71,22 +70,22 @@ public class PinHeadItemDecoration extends RecyclerView.ItemDecoration {
         mBackgroundPaint.setColor(Color.MAGENTA);
     }
 
-    public PinHeadItemDecoration bgColor(@ColorInt int color) {
+    public PInHeadItemDecoration bgColor(@ColorInt int color) {
         mBackgroundPaint.setColor(color);
         return this;
     }
 
-    public PinHeadItemDecoration setPush(boolean push) {
+    public PInHeadItemDecoration setPush(boolean push) {
         isPush = push;
         return this;
     }
 
-    public PinHeadItemDecoration textColor(@ColorInt int color) {
+    public PInHeadItemDecoration textColor(@ColorInt int color) {
         mTextPaint.setColor(color);
         return this;
     }
 
-    public PinHeadItemDecoration textSize(int px) {
+    public PInHeadItemDecoration textSize(int px) {
         mTextPaint.setTextSize(px);
         //计算文字高度及基线位置
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
@@ -98,14 +97,14 @@ public class PinHeadItemDecoration extends RecyclerView.ItemDecoration {
         return this;
     }
 
-    public PinHeadItemDecoration titleHeight(int height) {
+    public PInHeadItemDecoration titleHeight(int height) {
         mTitleHeight = height;
         mTextCenterYToBottom = mTitleHeight / 2 -
                 centerBaseLineHeight;
         return this;
     }
 
-    public PinHeadItemDecoration setDecorationDrawer(DecorationDrawer decorationDrawer) {
+    public PInHeadItemDecoration setDecorationDrawer(DecorationDrawer decorationDrawer) {
         this.decorationDrawer = decorationDrawer;
         return this;
     }
