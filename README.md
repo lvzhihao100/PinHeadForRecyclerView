@@ -1,24 +1,22 @@
-######特点
++ github:https://github.com/lvzhihao100/PinHeadForRecyclerView
++ 简书:https://www.jianshu.com/p/590b26046195
+###### 特点
 * 使用ItemDecoration实现
 * 两种悬浮方式
 * 悬浮头部可以自定义,自己画
 * 内置常见悬浮头部
 ###### 展示
-  * 悬浮头不可推动  
-  
-![nopush_normal.gif](http://upload-images.jianshu.io/upload_images/4179767-86631c1c23f0920c.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
-
-  * 悬浮头可推动    
-  
-![push_normal.gif](http://upload-images.jianshu.io/upload_images/4179767-dfbcb19890ec3114.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
-
- * 仿魅族手机电话本悬浮头可推动  
- 
-![push_mei.gif](http://upload-images.jianshu.io/upload_images/4179767-5bf0d440d5992331.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
-
+ ######### 悬浮头不可推动 
+![nopush_normal.gif](http://upload-images.jianshu.io/upload_images/4179767-86631c1c23f0920c.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ######### 悬浮头可推动 
+![push_normal.gif](http://upload-images.jianshu.io/upload_images/4179767-dfbcb19890ec3114.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+######### 仿魅族手机电话本悬浮头可推动 
+![push_mei.gif](http://upload-images.jianshu.io/upload_images/4179767-5bf0d440d5992331.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ###### 依赖
-
+```
+ compile 'com.github.lvzhihao100:PinHeadForRecyclerView:1.3'
+```
 ###### 使用方式
 ```
 PInHeadItemDecoration floatingItemDecoration = new PInHeadItemDecoration();
