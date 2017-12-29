@@ -17,9 +17,13 @@ public class MeizuDecorationDrawer implements DecorationDrawer {
 
 //        c.drawRect(left, top, right, bottom, mBackgroundPaint);
         Paint paint = new Paint();
-        int num = SumStrAscii(title) % 8 - 1;
+        int a = SumStrAscii(title) % 255;
+        int r = SumStrAscii(title + a) % 255;
+        int g = SumStrAscii(title + r) % 255;
+        int b = SumStrAscii(title + g) % 255;
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.argb(255, num / 4 * 255, (num % 4) / 2 * 255, num % 2 * 255));
+        paint.setColor(Color.argb(a, (r * r) % 255, (g * g) % 255, (b * b) % 255));
+
         c.drawCircle(paddingLeft, bottom - mTitleHeight / 2, 35, paint);
 
         mTextPaint.setColor(Color.WHITE);
@@ -31,9 +35,12 @@ public class MeizuDecorationDrawer implements DecorationDrawer {
                          Paint mBackgroundPaint, Paint mTextPaint, float baseLine, int mTitleHeight) {
 
         Paint paint = new Paint();
-        int num = SumStrAscii(title) % 8 - 1;
+        int a = SumStrAscii(title) % 255;
+        int r = SumStrAscii(title + a) % 255;
+        int g = SumStrAscii(title + r) % 255;
+        int b = SumStrAscii(title + g) % 255;
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.argb(255, num / 4 * 255, (num % 4) / 2 * 255, num % 2 * 255));
+        paint.setColor(Color.argb(a, (r * r) % 255, (g * g) % 255, (b * b) % 255));
         c.drawCircle(paddingLeft, bottom - mTitleHeight / 2, 35, paint);
 
         mTextPaint.setColor(Color.WHITE);
@@ -51,6 +58,6 @@ public class MeizuDecorationDrawer implements DecorationDrawer {
         for (int i = 0; i < bytestr.length; i++) {
             sum += bytestr[i];
         }
-        return sum;
+        return Math.abs(sum);
     }
 }

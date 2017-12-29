@@ -23,7 +23,7 @@ import java.util.Map;
  * E-Mail：1030753080@qq.com
  */
 
-public class PInHeadItemDecoration extends RecyclerView.ItemDecoration {
+public class PinHeadItemDecoration extends RecyclerView.ItemDecoration {
     //存放拥有头部的位置及展示文字
     private Map<Integer, String> keys = new HashMap<>();
     //头部所占高度
@@ -44,7 +44,7 @@ public class PInHeadItemDecoration extends RecyclerView.ItemDecoration {
     private float mTextCenterYToBottom;
     private float centerBaseLineHeight;
 
-    public PInHeadItemDecoration() {
+    public PinHeadItemDecoration() {
         init();
     }
 
@@ -70,22 +70,22 @@ public class PInHeadItemDecoration extends RecyclerView.ItemDecoration {
         mBackgroundPaint.setColor(Color.MAGENTA);
     }
 
-    public PInHeadItemDecoration bgColor(@ColorInt int color) {
+    public PinHeadItemDecoration bgColor(@ColorInt int color) {
         mBackgroundPaint.setColor(color);
         return this;
     }
 
-    public PInHeadItemDecoration setPush(boolean push) {
+    public PinHeadItemDecoration setPush(boolean push) {
         isPush = push;
         return this;
     }
 
-    public PInHeadItemDecoration textColor(@ColorInt int color) {
+    public PinHeadItemDecoration textColor(@ColorInt int color) {
         mTextPaint.setColor(color);
         return this;
     }
 
-    public PInHeadItemDecoration textSize(int px) {
+    public PinHeadItemDecoration textSize(int px) {
         mTextPaint.setTextSize(px);
         //计算文字高度及基线位置
         Paint.FontMetrics fm = mTextPaint.getFontMetrics();
@@ -97,14 +97,14 @@ public class PInHeadItemDecoration extends RecyclerView.ItemDecoration {
         return this;
     }
 
-    public PInHeadItemDecoration titleHeight(int height) {
+    public PinHeadItemDecoration titleHeight(int height) {
         mTitleHeight = height;
         mTextCenterYToBottom = mTitleHeight / 2 -
                 centerBaseLineHeight;
         return this;
     }
 
-    public PInHeadItemDecoration setDecorationDrawer(DecorationDrawer decorationDrawer) {
+    public PinHeadItemDecoration setDecorationDrawer(DecorationDrawer decorationDrawer) {
         this.decorationDrawer = decorationDrawer;
         return this;
     }
@@ -133,7 +133,12 @@ public class PInHeadItemDecoration extends RecyclerView.ItemDecoration {
         if (nextSecPos == -1) {
             drawFlowHead(c, parent, title, mTitleHeight);
         } else {
-            View child = parent.findViewHolderForAdapterPosition(nextSecPos).itemView;
+            RecyclerView.ViewHolder viewHolder = parent.findViewHolderForAdapterPosition(nextSecPos);
+            if (viewHolder == null) {//下一个移动头目还未出现在屏幕上
+                return;
+            }
+            View child = viewHolder.itemView;
+
             if (child.getTop() > mTitleHeight * 2) {
                 drawFlowHead(c, parent, title, mTitleHeight);
             } else {
